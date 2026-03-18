@@ -1,0 +1,20 @@
+a {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+a.active,
+a:hover {
+  color: var(--color-primary);
+}
+a::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-medium));
+  transition: width 0.3s ease-in-out;
+}
+a.active::before {
+  width: 100%;
+}
