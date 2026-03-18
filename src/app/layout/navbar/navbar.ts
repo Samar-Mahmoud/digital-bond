@@ -1,10 +1,11 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Logo } from '../../components/logo/logo';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, Logo],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
