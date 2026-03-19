@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #dc3545;
-  --color-primary-medium: #aa0200;
+  --color-primary: #ae201d;
+  --color-primary-medium: #ff342f;
+  --color-primary-dark: #6b2e2e;
 }
 
 @utility bg-gradient {
@@ -11,6 +12,9 @@
     var(--color-primary) 0%,
     var(--color-primary-medium) 100%
   );
+}
+@utility bg-gradient-light {
+  background-image: linear-gradient(to right bottom, #fff7ed 0%, #ffffff 50%, #fff7ed 100%);
 }
 @utility btn-shadow {
   box-shadow:
