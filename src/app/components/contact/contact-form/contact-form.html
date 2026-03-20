@@ -1,0 +1,64 @@
+<form class="space-y-4" (submit)="handleSubmit($event)">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- First Name -->
+    <div class="flex flex-col gap-0.5">
+      <label for="first-name" class="mb-3 text-sm font-semibold">First Name *</label>
+      <input class="form-input" id="first-name" placeholder="John" required />
+    </div>
+    <!-- Last Name -->
+    <div class="flex flex-col gap-0.5">
+      <label for="last-name" class="mb-3 text-sm font-semibold">Last Name * </label>
+      <input class="form-input" id="last-name" placeholder="Doe" required />
+    </div>
+    <!-- Email Address -->
+    <div class="flex flex-col gap-0.5">
+      <label for="email" class="mb-3 text-sm font-semibold">Email Address *</label>
+      <input class="form-input" type="email" id="email" placeholder="john@company.com" required />
+    </div>
+    <!-- Company -->
+    <div class="flex flex-col gap-0.5">
+      <label for="company" class="mb-3 text-sm font-semibold">Company *</label>
+      <input class="form-input" id="company" placeholder="Your Company Name" required />
+    </div>
+  </div>
+
+  <!-- Project -->
+  <div class="flex flex-col gap-0.5">
+    <label for="project" class="mb-3 text-sm font-semibold">Tell us about your project </label>
+    <textarea
+      id="project"
+      class="resize-none form-input"
+      rows="5"
+      placeholder="Describe your project goals, challenges, and what success looks like for you..."
+    ></textarea>
+  </div>
+
+  <!-- Communication Check -->
+  <div class="flex gap-3 pt-3 pb-5 items-center">
+    <input
+      class="size-5 cursor-pointer checked:border-primary-dark checked:bg-primary-dark focus-within:border-primary"
+      type="checkbox"
+      id="check"
+    />
+    <label class="text-sm font-medium cursor-pointer" for="check">
+      I agree to receive communications and accept the
+      <a href="#" class="font-bold underline">Privacy Policy</a>
+    </label>
+  </div>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="group w-full text-white bg-gradient py-5 font-bold rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+  >
+    <span class="flex items-center justify-center gap-3">
+      Get My Free Consultation
+      <svg class="size-3 group-hover:translate-x-0.5" viewBox="0 0 512 512">
+        <path
+          fill="currentColor"
+          d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+        ></path>
+      </svg>
+    </span>
+  </button>
+</form>

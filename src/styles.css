@@ -29,3 +29,6 @@ html {
 .text-gradient {
   @apply bg-gradient bg-clip-text text-transparent;
 }
+.form-input {
+  @apply border border-gray-200 hover:border-primary-dark focus-visible:outline-primary-dark rounded-lg py-2 px-4 transition-colors placeholder:text-sm;
+}
