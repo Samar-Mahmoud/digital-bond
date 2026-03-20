@@ -1,6 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import { Stats } from '../../components/stats/stats';
+import { Stats } from '../../components/hero/stats/stats';
 
 @Component({
   selector: 'app-hero',
