@@ -1,0 +1,59 @@
+<div
+  class="group p-12 border border-gray-200 rounded-3xl backdrop-blur-sm shadow relative z-0 before:absolute before:inset-0 before:bg-gradient-light before:opacity-0 before:rounded-3xl hover:before:opacity-100 transition-opacity before:-z-10"
+>
+  <!-- Author Info -->
+  <div class="flex flex-col md:flex-row items-center gap-5 mb-12">
+    <!-- Image -->
+    <div class="size-20 p-0.5 relative rounded-full ring ring-primary-medium flex">
+      <img class="w-full h-full m-auto rounded-full" src="assets/avatar.png" alt="Ahmed Al-Farsi" />
+
+      <div
+        class="absolute size-7 -bottom-1 -right-1 rounded-full bg-gradient text-white border-2 border-white flex"
+      >
+        <svg class="m-auto size-3.5" viewBox="0 0 448 512">
+          <path
+            fill="currentColor"
+            d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <!-- Details -->
+    <div class="text-center md:text-left">
+      <h4 class="text-primary-dark font-bold text-lg">{{ name() }}</h4>
+      <span class="text-gray-700">{{ position() }}</span>
+      <div class="flex items-center text-primary gap-1.5 mt-1.5">
+        <svg class="size-4 text-primary" viewBox="0 0 448 512">
+          <path
+            fill="currentColor"
+            d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"
+          ></path>
+        </svg>
+        <span class="text-sm text-gray-700">Verified on LinkedIn</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote -->
+  <blockquote
+    class="text-primary-dark font-medium after:block after:my-8 after:bg-linear-to-r after:from-white after:via-gray-200 after:to-white after:h-px"
+  >
+    "{{ feedback() }}"
+  </blockquote>
+
+  <!-- Rate -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="flex gap-1 text-amber-300">
+      @for (i of [1, 2, 3, 4, 5]; track $index) {
+        <svg width="1.25rem" height="1rem" class="m-auto" viewBox="0 0 576 512">
+          <path
+            fill="currentColor"
+            d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
+          ></path>
+        </svg>
+      }
+    </div>
+
+    <span class="font-medium text-sm text-primary-dark">5.0 Rating</span>
+  </div>
+</div>
