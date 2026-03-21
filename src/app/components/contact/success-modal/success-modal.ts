@@ -1,4 +1,5 @@
-import { Component, output } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-success-modal',
@@ -6,10 +7,9 @@ import { Component, output } from '@angular/core';
   templateUrl: './success-modal.html',
 })
 export class SuccessModal {
-  onClose = output();
+  private router = inject(Router);
 
   handleClose() {
-    console.log('done');
-    this.onClose.emit();
+    this.router.navigateByUrl('/');
   }
 }
