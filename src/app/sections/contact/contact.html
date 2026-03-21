@@ -1,4 +1,4 @@
-<section id="form" class="py-16">
+<section id="contact" class="py-16">
   <div class="container mx-auto px-4 lg:px-5">
     <app-section-header [badge]="badge" [title]="title" [description]="description">
       <svg class="size-4" viewBox="0 0 512 512">
@@ -9,22 +9,19 @@
       </svg>
     </app-section-header>
 
-    <div class="border border-gray-200 rounded-3xl shadow max-w-6xl mx-auto">
-      <div class="grid grid-cols-12 lg:gap-4">
-        <div class="col-span-12 lg:col-span-8 p-8 text-primary-dark">
-          <h3 class="font-bold mb-4 text-lg">Get Your Free Consultation</h3>
+    <div class="border border-gray-200 rounded-3xl shadow max-w-6xl mx-auto grid grid-cols-12">
+      <div class="col-span-12 lg:col-span-8 p-8 text-primary-dark">
+        <h3 class="font-bold mb-4 text-lg">Get Your Free Consultation</h3>
 
-          <p class="mb-8">
-            Fill out the form and we'll get back to you within 24 hours with a personalized
-            proposal.
-          </p>
+        <p class="mb-8">
+          Fill out the form and we'll get back to you within 24 hours with a personalized proposal.
+        </p>
 
-          <app-contact-form />
-        </div>
+        <app-contact-form />
+      </div>
 
-        <div class="col-span-12 lg:col-span-4">
-          <app-why-choose-us />
-        </div>
+      <div class="col-span-12 lg:col-span-4">
+        <app-why-choose-us />
       </div>
     </div>
   </div>

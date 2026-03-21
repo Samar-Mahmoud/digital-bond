@@ -1,55 +1,95 @@
-<form class="space-y-4" (submit)="handleSubmit($event)">
+<form class="space-y-4" [formGroup]="formData" (ngSubmit)="handleSubmit()">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <!-- First Name -->
-    <div class="flex flex-col gap-0.5">
+    <div
+      [class.invalid]="formData.touched && !!this.formData.controls.firstName.errors"
+      class="flex flex-col gap-0.5"
+    >
       <label for="first-name" class="mb-3 text-sm font-semibold">First Name *</label>
-      <input class="form-input" id="first-name" placeholder="John" required />
+      <input class="form-input" id="first-name" placeholder="John" formControlName="firstName" />
+      @if (formData.touched && !!this.formData.controls.firstName.errors) {
+        <span class="text-xs text-red-600 font-semibold ml-1">{{
+          this.formData.controls.firstName.errors['required']
+            ? 'First Name is requied'
+            : 'First Name must be at least 2 characters long'
+        }}</span>
+      }
     </div>
     <!-- Last Name -->
-    <div class="flex flex-col gap-0.5">
+    <div
+      [class.invalid]="formData.touched && !!this.formData.controls.lastName.errors"
+      class="flex flex-col gap-0.5"
+    >
       <label for="last-name" class="mb-3 text-sm font-semibold">Last Name * </label>
-      <input class="form-input" id="last-name" placeholder="Doe" required />
+      <input class="form-input" id="last-name" placeholder="Doe" formControlName="lastName" />
+      @if (formData.touched && !!this.formData.controls.lastName.errors) {
+        <span class="text-xs text-red-600 font-semibold ml-1">{{
+          this.formData.controls.lastName.errors['required']
+            ? 'Last Name is requied'
+            : 'Last Name must be at least 2 characters long'
+        }}</span>
+      }
     </div>
     <!-- Email Address -->
-    <div class="flex flex-col gap-0.5">
+    <div
+      [class.invalid]="formData.touched && !!this.formData.controls.email.errors"
+      class="flex flex-col gap-0.5"
+    >
       <label for="email" class="mb-3 text-sm font-semibold">Email Address *</label>
-      <input class="form-input" type="email" id="email" placeholder="john@company.com" required />
+      <input
+        class="form-input"
+        type="email"
+        id="email"
+        placeholder="john@company.com"
+        formControlName="email"
+      />
+      @if (formData.touched && !!this.formData.controls.email.errors) {
+        <span class="text-xs text-red-600 font-semibold ml-1">{{
+          this.formData.controls.email.errors['required']
+            ? 'Email is requied'
+            : 'Email must be a valid email address'
+        }}</span>
+      }
     </div>
     <!-- Company -->
-    <div class="flex flex-col gap-0.5">
+    <div
+      [class.invalid]="formData.touched && !!this.formData.controls.company.errors"
+      class="flex flex-col gap-0.5"
+    >
       <label for="company" class="mb-3 text-sm font-semibold">Company *</label>
-      <input class="form-input" id="company" placeholder="Your Company Name" required />
+      <input
+        class="form-input"
+        id="company"
+        placeholder="Your Company Name"
+        formControlName="company"
+      />
+      @if (formData.touched && !!this.formData.controls.company.errors) {
+        <span class="text-xs text-red-600 font-semibold ml-1">{{
+          this.formData.controls.company.errors['required']
+            ? 'Company name is requied'
+            : 'Company Name must be at least 2 characters long'
+        }}</span>
+      }
     </div>
   </div>
 
   <!-- Project -->
-  <div class="flex flex-col gap-0.5">
+  <div class="flex flex-col gap-0.5 mb-8">
     <label for="project" class="mb-3 text-sm font-semibold">Tell us about your project </label>
     <textarea
       id="project"
       class="resize-none form-input"
       rows="5"
       placeholder="Describe your project goals, challenges, and what success looks like for you..."
+      formControlName="project"
     ></textarea>
-  </div>
-
-  <!-- Communication Check -->
-  <div class="flex gap-3 pt-3 pb-5 items-center">
-    <input
-      class="size-5 cursor-pointer checked:border-primary-dark checked:bg-primary-dark focus-within:border-primary"
-      type="checkbox"
-      id="check"
-    />
-    <label class="text-sm font-medium cursor-pointer" for="check">
-      I agree to receive communications and accept the
-      <a href="#" class="font-bold underline">Privacy Policy</a>
-    </label>
   </div>
 
   <!-- Submit -->
   <button
+    [disabled]="!formData.touched || formData.invalid"
     type="submit"
-    class="group w-full text-white bg-gradient py-5 font-bold rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+    class="group w-full text-white bg-gradient py-5 font-bold rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
   >
     <span class="flex items-center justify-center gap-3">
       Get My Free Consultation

@@ -23,13 +23,16 @@ export class Navbar {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.sections = [...document.querySelectorAll('section[id]')];
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.activeSection.set(entry.target.id);
-        }
-      });
-    });
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.activeSection.set(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
   }
 
   toggleMenu() {
