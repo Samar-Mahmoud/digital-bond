@@ -1,9 +1,10 @@
-import { Component, computed } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SuccessModal } from '../success-modal/success-modal';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SuccessModal],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.css',
 })
@@ -16,9 +17,16 @@ export class ContactForm {
     project: new FormControl(''),
   });
 
+  showPopup = signal(false);
+
   handleSubmit() {
     if (this.formData.invalid) return;
 
+    this.showPopup.set(true);
     this.formData.reset();
+  }
+
+  handleClose() {
+    this.showPopup.set(false);
   }
 }
