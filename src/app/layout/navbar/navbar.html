@@ -1,5 +1,5 @@
 <header
-  class="fixed backdrop-blur-md border-b border-gray-200 z-10 top-0 w-full"
+  class="sticky backdrop-blur-md border-b border-gray-200 z-10 top-0 w-full"
   [ngClass]="
     isScrolled()
       ? 'bg-[linear-gradient(to_right_bottom,#ffffff_0%,#f6e4cf_100%)] shadow-sm'
@@ -74,10 +74,16 @@
     @if (isMenuOpen()) {
       <!-- Mobile Menu -->
       <div class="lg:hidden flex flex-col py-4 space-y-4 text-gray-700">
-        <a href="#hero" class="font-medium">Home</a>
-        <a href="#services" class="font-medium">Services</a>
-        <a href="#clients" class="font-medium">Testimonials</a>
-        <a href="#contact" class="font-medium">Contact Us</a>
+        <a href="#hero" class="font-medium" [class.active]="activeSection() === 'hero'">Home</a>
+        <a href="#services" class="font-medium" [class.active]="activeSection() === 'services'"
+          >Services</a
+        >
+        <a href="#clients" class="font-medium" [class.active]="activeSection() === 'clients'"
+          >Testimonials</a
+        >
+        <a href="#contact" class="font-medium" [class.active]="activeSection() === 'contact'"
+          >Contact Us</a
+        >
       </div>
     }
   </nav>
