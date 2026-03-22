@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SectionHeader } from '../../../../shared/components/section-header/section-header';
 import { ServiceCard } from '../../components/services/service-card/service-card';
+import { Service } from '../../../../shared/models/service.model';
 
 @Component({
   selector: 'app-services',
@@ -13,7 +14,7 @@ export class Services {
   readonly description =
     'From concept to deployment, we provide end-to-end digital services that transform your business and engage your customers.';
 
-  readonly services = [
+  readonly services: Service[] = [
     {
       title: 'Social Media Management',
       description:

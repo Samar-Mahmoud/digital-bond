@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
   styleUrl: './service-card.css',
 })
 export class ServiceCard {
-  title = input<string>();
-  description = input<string>();
-  features = input<string[]>();
+  title = input.required<string>();
+  description = input.required<string>();
+  features = input.required<string[]>();
 }

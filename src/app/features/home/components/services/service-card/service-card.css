@@ -5,7 +5,8 @@
   transition: scale 0.3s;
 }
 .card .card-link {
-  transition:
-    gap 0.3s,
-    color 0.3s;
+  transition: color 0.3s;
+}
+.card .card-link svg {
+  transition: translate 0.3s;
 }

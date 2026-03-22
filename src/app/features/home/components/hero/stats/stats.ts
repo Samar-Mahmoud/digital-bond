@@ -18,21 +18,28 @@ export class Stats {
 
   private platformId = inject(PLATFORM_ID);
 
+  observer: IntersectionObserver | null = null;
+
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !this.hasAnimated) {
-          this.startAnimation();
-          this.hasAnimated = true;
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.6 },
-    );
+    requestAnimationFrame(() => {
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !this.hasAnimated) {
+            this.startAnimation();
+            this.hasAnimated = true;
+          }
+        },
+        { threshold: 0.2 },
+      );
 
-    observer.observe(document.querySelector('#stats')!);
+      this.observer.observe(document.querySelector('#stats')!);
+    });
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 
   startAnimation() {

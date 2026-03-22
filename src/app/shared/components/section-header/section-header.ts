@@ -6,7 +6,7 @@ import { Component, input } from '@angular/core';
   templateUrl: './section-header.html',
 })
 export class SectionHeader {
-  badge = input<string>();
-  title = input(['', '']);
-  description = input<string>();
+  badge = input.required<string>();
+  title = input.required<[string, string]>();
+  description = input.required<string>();
 }

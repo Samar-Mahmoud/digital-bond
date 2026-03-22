@@ -14,7 +14,7 @@
   <ul class="mb-4 space-y-2 text-gray-700">
     @for (feature of features(); track $index) {
       <li class="text-sm flex items-center gap-2">
-        <svg width="12" height="12" viewBox="0 0 448 512">
+        <svg width="12" height="12" viewBox="0 0 448 512" aria-hidden="true">
           <path
             fill="var(--color-primary)"
             d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
@@ -26,10 +26,10 @@
   </ul>
 
   <button
-    class="card-link cursor-pointer text-primary font-semibold flex items-center gap-2 group-hover:gap-3 hover:text-primary-dark"
+    class="card-link cursor-pointer text-primary font-semibold flex items-center gap-2 hover:text-primary-dark"
   >
     Learn More
-    <svg class="size-3 mt-1" viewBox="0 0 512 512">
+    <svg class="size-3 mt-1 group-hover:translate-x-1" viewBox="0 0 512 512" aria-hidden="true">
       <path
         fill="currentColor"
         d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
