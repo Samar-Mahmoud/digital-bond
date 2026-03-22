@@ -32,3 +32,6 @@ html {
 .form-input {
   @apply border border-gray-200 hover:border-primary-dark focus-visible:outline-primary-dark rounded-lg py-2 px-4 transition-colors placeholder:text-sm;
 }
+.social-icon {
+  @apply size-9 shrink-0 flex bg-gray-50 text-gray-700 hover:bg-primary hover:text-white transition-colors rounded-lg;
+}
