@@ -16,26 +16,27 @@ export class Navbar {
 
   private platformId = inject(PLATFORM_ID);
 
-  sections: Element[] = [];
   observer: IntersectionObserver | null = null;
 
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.sections = [...document.querySelectorAll('section[id]')];
+    requestAnimationFrame(() => {
+      const sections = document.querySelectorAll('section[id]');
 
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.activeSection.set(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.activeSection.set(entry.target.id);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
 
-    this.sections.forEach((section) => this.observer!.observe(section));
+      sections.forEach((section) => this.observer!.observe(section));
+    });
   }
 
   ngOnDestroy() {
