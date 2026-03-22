@@ -1,42 +1,31 @@
 <form class="space-y-4" [formGroup]="formData" (ngSubmit)="handleSubmit()">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <!-- First Name -->
-    <div
-      [class.invalid]="
-        formData.controls.firstName.dirty && !!this.formData.controls.firstName.errors
-      "
-      class="flex flex-col gap-0.5"
-    >
+    <div [class.invalid]="isInvalid('firstName')" class="flex flex-col gap-0.5">
       <label for="first-name" class="mb-3 text-sm font-semibold">First Name *</label>
       <input class="form-input" id="first-name" placeholder="John" formControlName="firstName" />
-      @if (formData.controls.firstName.dirty && !!this.formData.controls.firstName.errors) {
+      @if (isInvalid('firstName')) {
         <span class="text-xs text-red-600 font-semibold ml-1">{{
-          this.formData.controls.firstName.errors['required']
-            ? 'First Name is requied'
+          this.formData.controls.firstName.errors!['required']
+            ? 'First Name is required'
             : 'First Name must be at least 2 characters long'
         }}</span>
       }
     </div>
     <!-- Last Name -->
-    <div
-      [class.invalid]="formData.controls.lastName.dirty && !!this.formData.controls.lastName.errors"
-      class="flex flex-col gap-0.5"
-    >
+    <div [class.invalid]="isInvalid('lastName')" class="flex flex-col gap-0.5">
       <label for="last-name" class="mb-3 text-sm font-semibold">Last Name * </label>
       <input class="form-input" id="last-name" placeholder="Doe" formControlName="lastName" />
-      @if (formData.controls.lastName.dirty && !!this.formData.controls.lastName.errors) {
+      @if (isInvalid('lastName')) {
         <span class="text-xs text-red-600 font-semibold ml-1">{{
-          this.formData.controls.lastName.errors['required']
-            ? 'Last Name is requied'
+          this.formData.controls.lastName.errors!['required']
+            ? 'Last Name is required'
             : 'Last Name must be at least 2 characters long'
         }}</span>
       }
     </div>
     <!-- Email Address -->
-    <div
-      [class.invalid]="formData.controls.email.dirty && !!this.formData.controls.email.errors"
-      class="flex flex-col gap-0.5"
-    >
+    <div [class.invalid]="isInvalid('email')" class="flex flex-col gap-0.5">
       <label for="email" class="mb-3 text-sm font-semibold">Email Address *</label>
       <input
         class="form-input"
@@ -45,19 +34,16 @@
         placeholder="john@company.com"
         formControlName="email"
       />
-      @if (formData.controls.email.dirty && !!this.formData.controls.email.errors) {
+      @if (isInvalid('email')) {
         <span class="text-xs text-red-600 font-semibold ml-1">{{
-          this.formData.controls.email.errors['required']
-            ? 'Email is requied'
+          this.formData.controls.email.errors!['required']
+            ? 'Email is required'
             : 'Email must be a valid email address'
         }}</span>
       }
     </div>
     <!-- Company -->
-    <div
-      [class.invalid]="formData.controls.company.dirty && !!this.formData.controls.company.errors"
-      class="flex flex-col gap-0.5"
-    >
+    <div [class.invalid]="isInvalid('company')" class="flex flex-col gap-0.5">
       <label for="company" class="mb-3 text-sm font-semibold">Company *</label>
       <input
         class="form-input"
@@ -65,10 +51,10 @@
         placeholder="Your Company Name"
         formControlName="company"
       />
-      @if (formData.controls.company.dirty && !!this.formData.controls.company.errors) {
+      @if (isInvalid('company')) {
         <span class="text-xs text-red-600 font-semibold ml-1">{{
-          this.formData.controls.company.errors['required']
-            ? 'Company name is requied'
+          this.formData.controls.company.errors!['required']
+            ? 'Company name is required'
             : 'Company Name must be at least 2 characters long'
         }}</span>
       }

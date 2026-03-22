@@ -7,7 +7,7 @@
     @for (item of whyChooseUs; track $index) {
       <li class="text-sm flex">
         <div class="size-12 rounded-xl shrink-0 bg-white/25 flex me-3">
-          <svg class="m-auto size-4" [attr.viewBox]="item.icon.viewBox">
+          <svg class="m-auto size-4" [attr.viewBox]="item.icon.viewBox" aria-hidden="true">
             <path fill="currentColor" [attr.d]="item.icon.path"></path>
           </svg>
         </div>

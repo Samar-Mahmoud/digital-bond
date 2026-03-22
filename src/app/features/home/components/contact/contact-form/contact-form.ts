@@ -11,11 +11,11 @@ import { SuccessModal } from '../success-modal/success-modal';
 })
 export class ContactForm {
   formData = new FormGroup({
-    firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    company: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    project: new FormControl(''),
+    firstName: new FormControl<string>('', [Validators.required, Validators.minLength(2)]),
+    lastName: new FormControl<string>('', [Validators.required, Validators.minLength(2)]),
+    email: new FormControl<string>('', [Validators.required, Validators.email]),
+    company: new FormControl<string>('', [Validators.required, Validators.minLength(2)]),
+    project: new FormControl<string>(''),
   });
 
   private router = inject(Router);
@@ -33,5 +33,10 @@ export class ContactForm {
   handleClose() {
     this.showModal.set(false);
     this.router.navigateByUrl('/');
+  }
+
+  isInvalid(controlName: keyof typeof this.formData.controls) {
+    const control = this.formData.controls[controlName];
+    return control.dirty && !!control.errors;
   }
 }

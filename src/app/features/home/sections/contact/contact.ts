@@ -10,7 +10,7 @@ import { ContactForm } from '../../components/contact/contact-form/contact-form'
 })
 export class Contact {
   readonly badge = "Let's Start Your Journey";
-  readonly title = ['Ready to', 'Transform?'];
+  readonly title: [string, string] = ['Ready to', 'Transform?'];
   readonly description =
     'Take the first step towards digital excellence. Our experts are ready to turn your vision into reality.';
 }

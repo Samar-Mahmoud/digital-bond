@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WhyChooseUsItem } from '../../../../../shared/models/contact.model';
 
 @Component({
   selector: 'app-why-choose-us',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './why-choose-us.html',
 })
 export class WhyChooseUs {
-  readonly whyChooseUs = [
+  readonly whyChooseUs: WhyChooseUsItem[] = [
     {
       title: '24-Hour Response',
       description: 'Quick turnaround on all inquiries with detailed project analysis',
