@@ -1,7 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Logo } from '../../components/common/logo/logo';
+import { Logo } from '../../shared/components/logo/logo';
 
 @Component({
   selector: 'app-navbar',
@@ -23,6 +23,7 @@ export class Navbar {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.sections = [...document.querySelectorAll('section[id]')];
+
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,6 +34,12 @@ export class Navbar {
       },
       { threshold: 0.3 },
     );
+
+    this.sections.forEach((section) => this.observer!.observe(section));
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 
   toggleMenu() {
@@ -42,6 +49,9 @@ export class Navbar {
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled.set(window.scrollY > 10);
-    this.sections.forEach((section) => this.observer?.observe(section));
+  }
+
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

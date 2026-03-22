@@ -8,7 +8,7 @@
 >
   <nav class="container mx-auto px-4 lg:px-8 py-3">
     <div class="flex gap-24 items-center">
-      <app-logo showDescription="false"></app-logo>
+      <app-logo [showDescription]="false"></app-logo>
 
       <button class="lg:hidden ms-auto text-primary flex cursor-pointer" (click)="toggleMenu()">
         <svg
@@ -32,13 +32,16 @@
       <div class="hidden lg:flex flex-1 items-center">
         <ul class="flex gap-8 text-gray-700">
           <li>
-            <a href="#hero" class="py-2 font-medium" [class.active]="activeSection() === 'hero'"
+            <a
+              (click)="scrollTo('hero')"
+              class="py-2 font-medium"
+              [class.active]="activeSection() === 'hero'"
               >Home</a
             >
           </li>
           <li>
             <a
-              href="#services"
+              (click)="scrollTo('services')"
               class="py-2 font-medium"
               [class.active]="activeSection() === 'services'"
               >Services</a
@@ -46,7 +49,7 @@
           </li>
           <li>
             <a
-              href="#clients"
+              (click)="scrollTo('clients')"
               class="py-2 font-medium"
               [class.active]="activeSection() === 'clients'"
               >Testimonials</a
@@ -54,7 +57,7 @@
           </li>
           <li>
             <a
-              href="#contact"
+              (click)="scrollTo('contact')"
               class="py-2 font-medium"
               [class.active]="activeSection() === 'contact'"
               >Contact Us</a
@@ -63,7 +66,7 @@
         </ul>
 
         <a
-          href="#contact"
+          (click)="scrollTo('contact')"
           class="ms-auto rounded-full cursor-pointer bg-gradient text-white font-medium px-4 py-2 hover:btn-shadow hover:text-white! transition-shadow"
         >
           Get Started
@@ -74,14 +77,28 @@
     @if (isMenuOpen()) {
       <!-- Mobile Menu -->
       <div class="lg:hidden flex flex-col py-4 space-y-4 text-gray-700">
-        <a href="#hero" class="font-medium" [class.active]="activeSection() === 'hero'">Home</a>
-        <a href="#services" class="font-medium" [class.active]="activeSection() === 'services'"
+        <a
+          (click)="scrollTo('hero')"
+          class="font-medium"
+          [class.active]="activeSection() === 'hero'"
+          >Home</a
+        >
+        <a
+          (click)="scrollTo('services')"
+          class="font-medium"
+          [class.active]="activeSection() === 'services'"
           >Services</a
         >
-        <a href="#clients" class="font-medium" [class.active]="activeSection() === 'clients'"
+        <a
+          (click)="scrollTo('clients')"
+          class="font-medium"
+          [class.active]="activeSection() === 'clients'"
           >Testimonials</a
         >
-        <a href="#contact" class="font-medium" [class.active]="activeSection() === 'contact'"
+        <a
+          (click)="scrollTo('contact')"
+          class="font-medium"
+          [class.active]="activeSection() === 'contact'"
           >Contact Us</a
         >
       </div>

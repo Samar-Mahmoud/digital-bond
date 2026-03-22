@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../components/common/section-header/section-header';
+import { SectionHeader } from '../../../../shared/components/section-header/section-header';
 import { WhyChooseUs } from '../../components/contact/why-choose-us/why-choose-us';
 import { ContactForm } from '../../components/contact/contact-form/contact-form';
 

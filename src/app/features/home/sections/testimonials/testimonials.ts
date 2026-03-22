@@ -1,10 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { SectionHeader } from '../../components/common/section-header/section-header';
-import { TestimonialsCard } from '../../components/testimonials/testimonials-card/testimonials-card';
+import { SectionHeader } from '../../../../shared/components/section-header/section-header';
+import { TestimonialCard } from '../../components/testimonials/testimonial-card/testimonial-card';
 
 @Component({
   selector: 'app-testimonials',
-  imports: [SectionHeader, TestimonialsCard],
+  imports: [SectionHeader, TestimonialCard],
   templateUrl: './testimonials.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

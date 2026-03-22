@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../components/common/section-header/section-header';
+import { SectionHeader } from '../../../../shared/components/section-header/section-header';
 import { ServiceCard } from '../../components/services/service-card/service-card';
 
 @Component({

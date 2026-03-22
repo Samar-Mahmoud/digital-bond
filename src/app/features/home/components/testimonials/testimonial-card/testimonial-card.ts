@@ -1,11 +1,11 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-testimonials-card',
+  selector: 'app-testimonial-card',
   imports: [],
-  templateUrl: './testimonials-card.html',
+  templateUrl: './testimonial-card.html',
 })
-export class TestimonialsCard {
+export class TestimonialCard {
   name = input<string>();
   position = input<string>();
   feedback = input<string>();

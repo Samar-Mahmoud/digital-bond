@@ -1,6 +1,0 @@
-.invalid label {
-  color: var(--color-red-600);
-}
-.invalid input {
-  border: 2px solid var(--color-red-600);
-}

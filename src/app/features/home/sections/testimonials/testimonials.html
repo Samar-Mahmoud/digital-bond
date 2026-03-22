@@ -18,11 +18,11 @@
     >
       @for (testimonial of testimonials; track $index) {
         <swiper-slide>
-          <app-testimonials-card
+          <app-testimonial-card
             [name]="testimonial.name"
             [position]="testimonial.position"
             [feedback]="testimonial.feedback"
-          ></app-testimonials-card>
+          ></app-testimonial-card>
         </swiper-slide>
       }
     </swiper-container>

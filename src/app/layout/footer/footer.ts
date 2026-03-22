@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Logo } from '../../components/common/logo/logo';
-import { SocialLinks } from '../../components/common/social-links/social-links';
+import { Logo } from '../../shared/components/logo/logo';
+import { SocialLinks } from '../../shared/components/social-links/social-links';
 
 @Component({
   selector: 'app-footer',
