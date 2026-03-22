@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactForm } from './contact-form';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('ContactForm', () => {
   let component: ContactForm;
@@ -9,6 +10,7 @@ describe('ContactForm', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ContactForm],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ContactForm);

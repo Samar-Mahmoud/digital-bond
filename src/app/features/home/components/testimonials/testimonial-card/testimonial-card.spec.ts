@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestimonialCard } from './testimonial-card';
+import { provideZonelessChangeDetection } from '@angular/core';
 
-import { TestimonialsCard } from './testimonial-card';
-
-describe('TestimonialsCard', () => {
-  let component: TestimonialsCard;
-  let fixture: ComponentFixture<TestimonialsCard>;
+describe('TestimonialCard', () => {
+  let component: TestimonialCard;
+  let fixture: ComponentFixture<TestimonialCard>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestimonialsCard],
+      imports: [TestimonialCard],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TestimonialsCard);
+    fixture = TestBed.createComponent(TestimonialCard);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

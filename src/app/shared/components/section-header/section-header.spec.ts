@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SectionHeader } from './section-header';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('SectionHeader', () => {
   let component: SectionHeader;
@@ -9,6 +10,7 @@ describe('SectionHeader', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SectionHeader],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SectionHeader);
