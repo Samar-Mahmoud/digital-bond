@@ -6,7 +6,7 @@ import { Component, input } from '@angular/core';
   templateUrl: './testimonial-card.html',
 })
 export class TestimonialCard {
-  name = input<string>();
-  position = input<string>();
-  feedback = input<string>();
+  name = input.required<string>();
+  position = input.required<string>();
+  feedback = input.required<string>();
 }

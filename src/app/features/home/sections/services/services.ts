@@ -10,7 +10,7 @@ import { Service } from '../../../../shared/models/service.model';
 })
 export class Services {
   readonly badge = 'Our Services';
-  readonly title = ['Comprehensive', 'Digital Solutions'];
+  readonly title: [string, string] = ['Comprehensive', 'Digital Solutions'];
   readonly description =
     'From concept to deployment, we provide end-to-end digital services that transform your business and engage your customers.';
 

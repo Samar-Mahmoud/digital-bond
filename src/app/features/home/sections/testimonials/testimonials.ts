@@ -1,6 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID } from '@angular/core';
 import { SectionHeader } from '../../../../shared/components/section-header/section-header';
 import { TestimonialCard } from '../../components/testimonials/testimonial-card/testimonial-card';
+import { Testimonial } from '../../../../shared/models/testimonial.model';
+import { isPlatformBrowser } from '@angular/common';
+import { register } from 'swiper/element/bundle';
 
 @Component({
   selector: 'app-testimonials',
@@ -10,11 +13,11 @@ import { TestimonialCard } from '../../components/testimonials/testimonial-card/
 })
 export class Testimonials {
   readonly badge = 'Client Testimonials';
-  readonly title = ['What Our', 'Clients Say'];
+  readonly title: [string, string] = ['What Our', 'Clients Say'];
   readonly description =
     "Don't just take our word for it. Here's what our clients have to say about working with us.";
 
-  readonly testimonials = [
+  readonly testimonials: Testimonial[] = [
     {
       name: 'Mohamed',
       position: 'Marketing Manager',
@@ -45,4 +48,14 @@ export class Testimonials {
         ' We have a growing relationship with Digital Bond and they continually bring more ideas and resources to our company.',
     },
   ];
+
+  private platformId = inject(PLATFORM_ID);
+
+  ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    import('swiper/element/bundle').then(() => {
+      register();
+    });
+  }
 }
