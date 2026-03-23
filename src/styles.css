@@ -1,9 +1,5 @@
 @import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
-}
-
 @theme {
   --color-primary: #ae201d;
   --color-primary-medium: #ff342f;
