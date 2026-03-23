@@ -81,7 +81,7 @@ This repository was adapted with a zoneless-friendly architecture to reduce reli
 
 ## Branches
 
-This repository should contain two branches:
+This repository contains two branches:
 
 - `master`: Full source code for the application (this branch).
 - `gh-pages`: Build-only branch containing the static production `browser` output for a GitHub Pages demo.
