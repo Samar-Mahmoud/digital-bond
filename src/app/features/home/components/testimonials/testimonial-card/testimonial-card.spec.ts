@@ -14,6 +14,9 @@ describe('TestimonialCard', () => {
 
     fixture = TestBed.createComponent(TestimonialCard);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('name', 'name');
+    fixture.componentRef.setInput('position', 'position');
+    fixture.componentRef.setInput('feedback', 'feedback');
     await fixture.whenStable();
   });
 

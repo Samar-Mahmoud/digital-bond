@@ -15,6 +15,9 @@ describe('ServiceCard', () => {
 
     fixture = TestBed.createComponent(ServiceCard);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('title', 'Title');
+    fixture.componentRef.setInput('features', ['feature 1']);
+    fixture.componentRef.setInput('description', 'description');
     await fixture.whenStable();
   });
 

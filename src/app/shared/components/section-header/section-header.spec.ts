@@ -15,6 +15,9 @@ describe('SectionHeader', () => {
 
     fixture = TestBed.createComponent(SectionHeader);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('badge', 'badge');
+    fixture.componentRef.setInput('title', ['part1', 'part2']);
+    fixture.componentRef.setInput('description', 'description');
     await fixture.whenStable();
   });
 
